@@ -13,5 +13,15 @@ namespace MVCTutorial_1.Services
         {
             return new ProjectEntity() { Id = id};
         }
+
+        public IEnumerable<ProjectEntity> GetProjects()
+        {
+            return new List<ProjectEntity>
+            {
+                new ProjectEntity { Id = 0, Name = "Project_1" },
+                new ProjectEntity { Id = 0, Name = "Project_2" },
+                new ProjectEntity { Id = 0, Name = "Project_3" },
+            };
+        }
     }
 }

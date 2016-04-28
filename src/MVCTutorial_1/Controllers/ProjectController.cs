@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.WebEncoders;
 using MVCTutorial_1.Services.Interfaces;
-using MVCTutorial_1.Models;
+using MVCTutorial_1.Models.Mappers;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,26 +13,31 @@ namespace MVCTutorial_1.Controllers
 {
     public class ProjectController : Controller
     {
+        #region Fields
         private IProjectServices _projectServices;
+        #endregion
 
-        public ProjectEntity CurrentProject { get; set; }
-
+        #region Public methods
         // GET: /<controller>/
-        public string Index()
+        public ActionResult Index()
         {
-            return "Salut !";
+            var entities = _projectServices.GetProjects().ToList();
+            var vm = entities.ConvertAll(ProjectMapper.ConvertToViewModel);
+
+            return View(vm);
         }
 
-        public string HelloWorld(string Id)
+        public ActionResult Create()
         {
-            return HtmlEncoder.Default.HtmlEncode(string.Format("Salut {0} !", Id));
+            return View();
         }
+        #endregion
 
+        #region Constructors
         public ProjectController(IProjectServices projectServices)
         {
             _projectServices = projectServices;
-
-            CurrentProject = _projectServices.GetProjectById(12);
-        }
+        } 
+        #endregion
     }
 }

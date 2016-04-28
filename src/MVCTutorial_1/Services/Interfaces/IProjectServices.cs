@@ -9,5 +9,6 @@ namespace MVCTutorial_1.Services.Interfaces
     public interface IProjectServices
     {
         ProjectEntity GetProjectById(int id);
+        IEnumerable<ProjectEntity> GetProjects();
     }
 }
