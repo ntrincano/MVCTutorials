@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using MVCTutorial_1.Models;
 using MVCTutorial_1.Services;
 using MVCTutorial_1.ViewModels.Manage;
+using MVCTutorial_1.Services.Interfaces;
 
 namespace MVCTutorial_1.Controllers
 {

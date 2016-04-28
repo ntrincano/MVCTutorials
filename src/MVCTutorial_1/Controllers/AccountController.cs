@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using MVCTutorial_1.Models;
 using MVCTutorial_1.Services;
 using MVCTutorial_1.ViewModels.Account;
+using MVCTutorial_1.Services.Interfaces;
 
 namespace MVCTutorial_1.Controllers
 {

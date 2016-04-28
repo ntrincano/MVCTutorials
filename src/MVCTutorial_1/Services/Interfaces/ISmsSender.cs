@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MVCTutorial_1.Services
+namespace MVCTutorial_1.Services.Interfaces
 {
     public interface ISmsSender
     {
